@@ -1,0 +1,41 @@
+{
+  "timeZone": "America/New_York",
+  "dependencies": {
+    "enabledAdvancedServices": []
+  },
+  "exceptionLogging": "STACKDRIVER",
+  "runtimeVersion": "V8",
+  "oauthScopes": [
+    "https://www.googleapis.com/auth/drive.readonly",
+    "https://www.googleapis.com/auth/drive.file",
+    "https://www.googleapis.com/auth/script.external_request"
+  ],
+  "addOns": {
+    "common": {
+      "name": "Intelligent Redundancy Scanner",
+      "logoUrl": "https://www.gstatic.com/images/icons/material/system/1x/folder_googblue_48dp.png",
+      "homepageTrigger": {
+        "runFunction": "onHomepage",
+        "enabled": true
+      },
+      "universalActions": [
+        {
+          "label": "Scan for Duplicates",
+          "openLink": "https://script.google.com/macros/s/YOUR_DEPLOYMENT_ID/exec"
+        }
+      ],
+      "useLocaleFromApp": true
+    },
+    "drive": {
+      "homepageTrigger": {
+        "runFunction": "onDriveHomepage",
+        "enabled": true
+      },
+      "onItemsSelectedTrigger": {
+        "runFunction": "onDriveItemsSelected",
+        "enabled": true
+      }
+    }
+  }
+}
+
